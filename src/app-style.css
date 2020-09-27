@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+	padding: 0;margin: 0;
+  overflow-x: hidden;
+  text-align: center;
+}
+.App_main {
+  min-height: 100vh;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}
+/*
+.content{
+  padding: 20px;
+  padding-bottom: 100px;
+}
+*/
+
+a {
+  text-decoration: none;
+}
+
+.app_footer a, .app_nav a {
+  color:white;
+}
+.app_footer a:hover, .app_nav a:hover {
+  color: yellow;
+}
+
+.error {
+	color: red;
+}

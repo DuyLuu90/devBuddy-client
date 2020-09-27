@@ -1,0 +1,117 @@
+form {
+    margin: 25px auto;
+    width: 75%;
+    max-width: 700px;
+}
+
+form h1, form h2 {
+    margin-bottom: 25px;
+    color: rgb(12, 12, 211);
+}
+
+form input{
+    padding:5px 10px;
+}
+
+.displayPassword {
+	color: gray;
+	font-size: 15px;
+	display: flex;
+}
+.displayPassword input {
+	width: 15px;
+	margin-right: 10px;
+}
+
+.form_control {
+    display: flex; justify-content: space-evenly; text-align: center;
+}
+
+.form_control button{
+    margin-top: 20px; width: 100px;padding: 10px;
+    border: none; color: white ; background-color: black;
+}
+
+.form_control button:hover {
+    cursor: pointer; color: yellow;
+}
+.form_control button:disabled, #help-me-login button:disabled {
+    cursor: not-allowed; background-color: gray;
+}
+
+.message {
+	color: red;
+	margin: 10px;
+}
+
+.error {
+    color: red;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.error span {
+    width: 70%;
+    text-align: center;
+    margin-bottom: 10px
+}
+
+/*REGISTRATION*/
+
+.reg_input{
+    display: flex; align-items: center;
+    margin-bottom: 10px;
+}
+.reg_input label, .reg_input header {
+    width: 30%;
+    text-align: left;
+}
+.reg_input input {
+    width: 60%;
+}
+.biometric {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+}
+.biometric input {
+    width: 30%;
+}
+
+/*LOGIN*/
+
+.Login-form input,
+.displayPassword,
+.form_help {
+	width: 75%;
+	margin: auto;
+	margin-bottom: 10px;
+}
+
+#help-me-login button {
+	padding: 8px; margin-top: 10px;
+	background-color: red; color: white;
+	border-style: none;
+}
+
+#help-me-login p{
+	color: red; text-align: center;
+	padding: 10px;
+}
+
+.LoginForm .form_help {
+	display: flex;
+	align-items: center;
+	font-size: 15px;
+}
+.form_help span, .form_help a {
+	margin: 5px;
+	color: blue;
+}
+.form_help span:hover, .form_help a:hover {
+	cursor: pointer;
+	color: orange;
+}
+.retrieve-info .form_control {
+	margin-top: 15px;
+}
+
