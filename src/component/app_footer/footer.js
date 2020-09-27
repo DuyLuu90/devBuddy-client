@@ -10,10 +10,10 @@ export default class Footer extends Component{
             <footer className='app_footer'> 
                 <div>
                     <FontAwesomeIcon className='icon' icon='copyright'/>
-                    <span>{' '}Thinkful 2020</span>
+                    <span>{' '}Duy Luu</span>
                 </div>
                 <Link to='myCalories2020@gmail.com'aria-label='email'><FontAwesomeIcon className='icon' icon='envelope'/>
-                            {' '}{' '}EMAIL US
+                            {' '}{' '}EMAIL ME
                 </Link>   
             </footer>
         )
