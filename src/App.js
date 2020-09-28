@@ -11,6 +11,7 @@ import NavBar from './component/app_nav/navBar';
 import Footer from './component/app_footer/footer';
 import LoginForm from './component/forms/loginform/loginform'
 import RegForm from './component/forms/regForm/regForm'
+import AlgorithmNotes from './component/algorithms_notes/algorithms_notes'
 
 export default class App extends Component {
   constructor() {
@@ -60,6 +61,7 @@ export default class App extends Component {
         <main className="App_main">
           {hasError &&<div className='red'>An unknown error has occurred.</div>}
           <Switch>
+            <Route path={'/algorithm'} component={AlgorithmNotes}/>
             <Route path={'/register'}component={RegForm}/>
             <Route path={'/login'} component={(props) => 
               <LoginForm {...props} onLoginSuccess={this.handleLoginSuccess}/>}/>

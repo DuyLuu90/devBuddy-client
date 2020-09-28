@@ -1,16 +1,35 @@
 .nav_icon {
     font-size: 40px;
 }
-.app_nav {
+.navs {
     position: fixed; top:0; left:0; right:0; z-index: 10;
-    height: 77px;
-    border-bottom: solid; border-width: thin; border-color: rgb(109, 106, 106);
+}
+.navs nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px;
+}
+.main_nav {
+    height: 50px;
+    background-color: black ; 
+}
+.main_nav div{
+    width: 75%;
+    display: flex;
+}
+.main_nav div a {
+    width: 20%; height: 50px; color: white;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center;
+}
+.main_nav div a:hover {
+    background-color: red;
+}
+.app_nav {
+    height: 77px;
+    border-bottom: solid; border-width: thin; border-color: rgb(109, 106, 106);
     background-color:#283593 ; 
-    color: white;
+    padding: 25px;
     overflow: hidden;
 }
 .app_nav h1 {

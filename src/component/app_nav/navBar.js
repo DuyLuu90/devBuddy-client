@@ -36,7 +36,8 @@ export default class NavBar extends Component{
             </div>
         )
     }
-    render() {
+
+    renderAppNav(){
         const nav= (this.props.token.hasAuthToken)? this.renderLogoutLink(): this.renderLoginLink()
         return (
             <nav className='app_nav'>
@@ -57,6 +58,28 @@ export default class NavBar extends Component{
                    
             </nav>
         )
-       
+    }
+    renderMainNav(){
+        return(
+            <nav className='main_nav'>
+                <div>
+                    <Link to='/algorithm' aria-label='tutorial-page'>Algorithm</Link>
+                    <Link to='/projects' aria-label='project-page'>Projects </Link>
+                    <Link to='/jobs' aria-label='job-page'>Jobs</Link>
+                    <Link to='/videos' aria-label='video-page'>Videos </Link>
+                    <Link to='/discussions' aria-label='discussion-page'>Discussions</Link>
+                </div>
+            </nav>
+        )
+    }
+    render() {
+        const appNav= this.renderAppNav()
+        const mainNav= this.renderMainNav()
+        return (
+            <div className='navs'>
+                {appNav}
+                {mainNav}
+            </div>
+        )
     }
 }
