@@ -25,7 +25,7 @@ export function RecursionNotes(){
         <div className='algorithm_note'>
             <h1>Recursive Algorithm</h1>
             <div className='keyword'>
-                <h2>Recursion</h2>
+                <h2>Introduction</h2>
                 <p>Recursion is a method of solving problem that involves a function calling itself. It breaks down function into sub-problems.</p>
             </div>
             <div className='keyword'>
@@ -52,7 +52,7 @@ export function ArrayNotes(){
         <div className='algorithm_note'>
             <h1>Array</h1>
             <div className='keyword'>
-                <h2>Concept</h2>
+                <h2>Introduction</h2>
                 <p>Arrays are an ordered sequence of data. The data is stored in contiguous memory. That means that all of the array data is stored in order at subsequent memory addresses.</p>
             </div>
             <div className='keyword'>
@@ -62,10 +62,6 @@ export function ArrayNotes(){
             </div>
             <div className='keyword'>
                 <h2>Memory module</h2>
-                <p></p>
-            </div>
-            <div className='keyword'>
-                <h2>Implement an array</h2>
                 <h3>Methods</h3>
                 <ul>
                     <li>get(ptr): return the value stored at a certain ptr (memory address)</li>
@@ -74,6 +70,18 @@ export function ArrayNotes(){
                     <li>free(ptr):</li>
                     <li>copy(to,from,size): copy "size" boxes from ptr "from" to ptr "to".</li>
                 </ul>
+            </div>
+            <div className='keyword'>
+                <h2>Working with array</h2>
+                <h3>Constructor</h3>
+                <p>The array starts out with this.length=0, this.pointer=0 block of memory and this.capacity=0</p>
+                <h3>Methods</h3>
+                <p>_resize(size): get current allocated memory{'->'}if it's null, throw error {'->'}allocate a new larger memory{'->'}copy any existing value to the new ptr from the old ptr and finally free the old one</p>
+                <p>push(value): if the length of the array is greater than the capacity, allocate more memory for the array using the _resize method. Then set the value at the end (this.ptr+this.length) of the array, then increase the length of the array by 1.  </p>
+                <p>get(index): check if the index is less than 0 or greater than the array length, then get the memory address of (this.ptr+index) </p>
+                <p>pop(): check if the array is empty. If not, get the value of the last item, reduce the length by 1, then return that value. </p>
+                <p>insert(i,val): check if index is valid. If the length is greater than the capacity, resize the capacity</p>
+                <p>remove(i): check if index is valid. </p>
             </div>
             <div className='keyword'>
                 <h2>Why is array not always a perfect choice?</h2>
@@ -132,8 +140,28 @@ export function StackQueueNotes(){
         <div className='algorithm_note'>
             <h1>Stacks and Queues</h1>
             <div className='keyword'>
-                <h2>key</h2>
-                <p></p>
+                <h2>Introduction</h2>
+                <p>Stacks(single linked list) and queues (doubly linked list) are two of the most commonly used data structures in web development (for ex, the history of pages visited, the handling of events in web browsers). </p>
+            </div>
+            <div className='keyword'>
+                <h2>Stack</h2>
+                <p>A stack is a data structure similar to a list with access restricted to only 1 end. It stores element in a LIFO(Last In First Out).</p>
+                <p>Stack is vertical data structure, unlike lists and arrays which are horizontal.</p>
+            </div>
+            <div className='keyword'>
+                <h2>Queue</h2>
+                <p>A queue is a data structure that stores elements in a FIFO (First In First Out).We can see a queue in the event loop of a web browser. </p>
+            </div>
+            <div className='keyword'>
+                <h2>Working with stacks and queues</h2>
+                <h3>Stacks</h3>
+                <p>A stack starts with an empty first node (this.top).It has 2 primary functions push(data) and pop(data) onto/from the top</p>
+                <p>To push: check to see if the stack is empty, then the node will be the top of the stack. Otherwise, create a new node, add data to the new node, and have the pointer point to the top.</p>
+                <p>To pop: in order to remove the top of the stack, you have to point the pointer to the next item and that item becomes the top of the stack (get this.top.data then this.top= this.top.next)</p>
+                <h3>Queues</h3>
+                <p>A queue starts with first node and last node. It has 2 main functions enqueue(data) and dequeue(oldest data) to a queue.</p>
+                <p>To enqueue: the opt is limited to the end of the queue. Make this.last.next= node, then this.last=node</p>
+                <p>To dequeue: the opt is limited to the beginning of the queue. If the queue is empty, return nothing. If this is the last item, make this.last=null. Otherwise, make this.first= this.first.next </p>
             </div>
         </div>
     )
@@ -144,8 +172,28 @@ export function HashNotes(){
         <div className='algorithm_note'>
             <h1>Hash maps</h1>
             <div className='keyword'>
-                <h2>key</h2>
-                <p></p>
+                <h2>Introduction</h2>
+                <p>Hash maps are UNordered associations between keys and values. Hash maps require a hash-table (array of obj) </p>
+                <p>Hasing is the process of mapping a key to a position in the hash table, which is a storage that holds the records (the key and any value associated with the key. Example where hashmaps are very useful if you want to implement a dictionary map. </p>
+                
+            </div>
+            <div className='keyword'>
+                <h2>Capacity</h2>
+                <p>Capacity grows in chunk as you resize to a larger array when the hash table is full to help cut down the number of memory allocations</p>
+                <p>MAX_LOAD_RATIO is the highest that the ratio between the length and the capacity will be allowed to reach.</p>
+            </div>
+            <div className='keyword'>
+                <h2>Collisions</h2>
+                <p>Happens when a new entry hashes to a location that is already occupied</p>
+                <h3>Solutions:</h3>
+                <p>Open addressing: when you have a collision, you hash the key to the empty slot nearest to where it should live.</p>
+                <p>Separate chaining: use linked list to hash the key that runs into collision. When a key collides with another, we use next pointers to put the keys in a linked list </p>
+            </div>
+            <div className='keyword'>
+                <h2>Working with hash map</h2>
+                <p>A hash map starts with an array called _hashTable, a length, and a capacity.</p>
+                <h3>Find an item</h3>
+                <p>To find an item in hash map, we don't need to check every element like in linked list. We just have to find the key that stores the element. The number of comparision would be constant o(1) and would not depend on the number of elements stored in the hashmap.</p>
             </div>
 
         </div>
@@ -157,7 +205,20 @@ export function BSTNotes(){
         <div className='algorithm_note'>
             <h1>Binary Search Tree</h1>
             <div className='keyword'>
-                <h2>key</h2>
+                <h2>Tree</h2>
+                <p>Tree is a data structure that consists of nodes which are linked together in a certain way. Node in a tree has a parent-child relationship (root, leaf)</p>
+            </div>
+            <div className='keyword'>
+                <h2>Binary tree</h2>
+                <p>A tree that can only has at most 2 children. It may have left branch and right branch.</p>
+                <p>A sub-tree is a mini tree within a binary tree. </p>
+            </div>
+            <div className='keyword'>
+                <h2>Binary Search Tree</h2>
+                <p>In BST, all of the nodes in the left branch of a node are guaranteed to have lower values, and all of the nodes in the right branch are guaranteed to have a higher value than the node itself.</p>
+            </div>
+            <div className='keyword'>
+                <h2>Working with BST</h2>
                 <p></p>
             </div>
 
@@ -170,10 +231,22 @@ export function SearchNotes(){
         <div className='algorithm_note'>
             <h1>Searching Algorithm</h1>
             <div className='keyword'>
-                <h2>key</h2>
+                <h2>Introduction</h2>
                 <p></p>
             </div>
-
+            <div className='keyword'>
+                <h2>Types of search</h2>
+                <h3>Linear Search</h3>
+                <p>To find an item, you will have to look through an array 1 by 1.</p>
+                <h3>Binary Search</h3>
+                <p>Only works on sorted array. It works on the same principle of dividing the range in half each time (divide conquer).</p>
+                <h3>Depth-first Search (DFS)</h3>
+                <p>Starts from a given node(usually the root), and traverse as far as you can down. If the node is handled before the branches then it's known pre-order traversal, and if after, then it's known post-order traversal.</p>
+                <h3>Breadth-first Search (BFS)</h3>
+                <p>This works across the rows of a tree. The tree is visited level by level. </p>
+                <p>We need FIFO queue so you can store all the siblings in the queue so you can store all the siblings in the queue and process them in the correct order.</p>
+                <p>When you visit a node, you add it to the queue then remove, and their children are visited. </p>
+            </div>
         </div>
     )
 }
@@ -183,8 +256,18 @@ export function SortNotes(){
         <div className='algorithm_note'>
             <h1>Sorting Algorithm</h1>
             <div className='keyword'>
-                <h2>key</h2>
+                <h2>Introduction</h2>
                 <p></p>
+            </div>
+            <div className='keyword'>
+                <h2>Types of sort</h2>
+                <h3>Bubble sort</h3>
+                <p>To find out whether adjacent values swapping, we will keep looping through an array until there are no more values that need swapping</p>
+                <h3>Merge sort</h3>
+                <p>Break the array down into continually smaller chunks, then merge them back together in the correct </p>
+                <h3>Quick sort</h3>
+                <p>More cache-efficient and can easily be performed in place</p>
+                <p>Divide and conquer approach: first, we partition the array into halves around a pivot value. Then all of the values which are less than the pivot values go to the first half of the array, and all of the values which are greater than the pivot go to the other half of the array.  </p>
             </div>
 
         </div>
