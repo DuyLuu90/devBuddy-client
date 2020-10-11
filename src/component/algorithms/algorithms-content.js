@@ -7,10 +7,22 @@ export function Algorithm(){
         <div className='algorithm_note'>
             <h1>INTRODUCTION</h1>
             <div>
-                Let's learn some common data structures like arrays, linked list, hash maps and trees!!!
+                Let's learn some common data structures like <strong>arrays, linked list, hash maps</strong> and <strong>trees</strong>!!!
             </div>
             <div>
-                <h2>Resources:</h2>
+                <h2>Key Terms</h2>
+                <ul>
+                    <li><strong>Algorithm: </strong>A process of a set of rules to be followed in computing or other problem-solving operations, including problem, constrains, input/out, and solutions.</li>
+                    <li><strong>Space complexity: </strong>refers to the amount of physical memory that an algorithm requires to complete</li>
+                    <li><strong>Time complexity: </strong>refers to the number of operations an algorithm requires to complete, described by <strong>Big O notation</strong>. Constant time <strong>0(1)</strong> means the alogorithm does not depend on the size of the input. In logarithm time <strong>0(log(n))</strong>, running time incrases slowly. In linear time <strong>0(n)</strong>, running time is directly proportional to the input size. We also have polynominal time <strong>0(n^k)</strong> and exponential time <strong>0(2^n)</strong>.</li>
+                    <li><strong>Memory: </strong>in computer, memory is like a long series of boxes. Inside each box, some information is stored. <strong>Memory address</strong> is the number on the front of those boxes.Variables containing memory address are known as <strong>pointer(ptr)</strong></li>
+                    <li><strong>Node: </strong>is the basic data structure. It contains data and may link to other nodes, usually by a pointer.</li>
+                    <li><strong>Cache locality: </strong>when the processor tries access data, it loads it direcly from the RAM, which is relatively slow. To make the code run faster, it also loads some of the data nearby into the caches. Since arrays store data in contiguous memory, this theory works well for them.</li>
+                    <li><strong>: </strong></li>
+                </ul>
+            </div>
+            <div>
+                <h2>Resources</h2>
                 <ul>
                     <li><a href='https://rb.gy/7rpsiv' target='_blank' rel="noopener noreferrer">500 practice problems</a></li>
                     <li><a href='https://rb.gy/o4rfkw' target='_blank' rel="noopener noreferrer">Common interview questions</a></li>
@@ -19,7 +31,6 @@ export function Algorithm(){
         </div>
     )
 }
-
 export function RecursionNotes(){
     return(
         <div className='algorithm_note'>
@@ -46,20 +57,15 @@ export function RecursionNotes(){
         </div>
     )
 }
-
 export function ArrayNotes(){
     return(
         <div className='algorithm_note'>
             <h1>Array</h1>
             <div className='keyword'>
                 <h2>Introduction</h2>
-                <p>Arrays are an ordered sequence of data. The data is stored in contiguous memory. That means that all of the array data is stored in order at subsequent memory addresses.</p>
+                <p>Arrays are an <strong>ordered</strong> sequence of data. The data is stored in <strong>contiguous</strong> memory. That means that all of the array data is stored in order at subsequent memory addresses.</p>
             </div>
-            <div className='keyword'>
-                <h2>Memory address</h2>
-                <p>Imagine that we have a long series of boxes. Inside each box, some information is stored. Each box has a number written on the front. This number is known as the memory address. </p>
-                <p>Variables containing memory addresses are known as pointers(ptr).</p>
-            </div>
+            
             <div className='keyword'>
                 <h2>Memory module</h2>
                 <h3>Methods</h3>
@@ -85,7 +91,7 @@ export function ArrayNotes(){
             </div>
             <div className='keyword'>
                 <h2>Why is array not always a perfect choice?</h2>
-                <h3>Push a new item:</h3>
+                <h3>Push a new item at the beginning/middle of the array:</h3>
                 <p>First, we have to resize the array so there is space for the new item. Then we have to set the memory at "this.ptr+length" to be equal to the value. </p>
                 <p>You cannot simply ask for some extra space directly at the end of your current allocated space. You have to allocate a new, larger chunk of memory, copy any existing values, and free the old chunk. </p>
                 <p>Solution: allocate more space than you need (for ex each time you go over the capacity, you triple the size of memory) </p>
@@ -94,18 +100,13 @@ export function ArrayNotes(){
         </div>
     )
 }
-
 export function LinkedListNotes(){
     return(
         <div className='algorithm_note'>
             <h1>Linked List</h1>
             <div className='keyword'>
-                <h2>Node</h2>
-                <p>Node is a basic unit of data structure. Node contains data and also may link to other nodes, usually by a pointer .</p>
-            </div>
-            <div className='keyword'>
                 <h2>Linked list</h2>
-                <p>Linked list is a data structure that allocates blocks of memory on demand. They are connected by "linking" and "storing" a series of "nodes".</p>
+                <p>Linked list is a <strong>linear</strong> data structure that allocates blocks of memory on demand and stores data in <strong>non-contiguous</strong> memory. Linked lists are connected by "linking" and "storing" a series of "nodes".</p>
                 <p>Linked list is better than array in that it can allocate blocks of memory on demand. Nodes in linked list can be allocated from anywhere in the memory.</p>
                 <p>Linked list has a head to indicate the beginning of the list. The head always contains the first node</p>
             </div>
@@ -134,14 +135,13 @@ export function LinkedListNotes(){
         </div>
     )
 }
-
 export function StackQueueNotes(){
     return(
         <div className='algorithm_note'>
             <h1>Stacks and Queues</h1>
             <div className='keyword'>
                 <h2>Introduction</h2>
-                <p>Stacks(single linked list) and queues (doubly linked list) are two of the most commonly used data structures in web development (for ex, the history of pages visited, the handling of events in web browsers). </p>
+                <p>Stacks(single linked list) and queues (doubly linked list) are two of the most commonly used data structures in web development (for ex, the history of pages visited, the handling of events in web browsers). They are both <strong>linear</strong> data stucture.</p>
             </div>
             <div className='keyword'>
                 <h2>Stack</h2>
@@ -166,14 +166,13 @@ export function StackQueueNotes(){
         </div>
     )
 }
-
 export function HashNotes(){
     return(
         <div className='algorithm_note'>
             <h1>Hash maps</h1>
             <div className='keyword'>
                 <h2>Introduction</h2>
-                <p>Hash maps are UNordered associations between keys and values. Hash maps require a hash-table (array of obj) </p>
+                <p>Hash maps are <strong>UNORDERED associations </strong> between keys and values. Hash maps require a hash-table (array of obj) </p>
                 <p>Hasing is the process of mapping a key to a position in the hash table, which is a storage that holds the records (the key and any value associated with the key. Example where hashmaps are very useful if you want to implement a dictionary map. </p>
                 
             </div>
@@ -199,14 +198,13 @@ export function HashNotes(){
         </div>
     )
 }
-
 export function BSTNotes(){
     return(
         <div className='algorithm_note'>
             <h1>Binary Search Tree</h1>
             <div className='keyword'>
                 <h2>Tree</h2>
-                <p>Tree is a data structure that consists of nodes which are linked together in a certain way. Node in a tree has a parent-child relationship (root, leaf)</p>
+                <p>Tree is a <strong>non-linear</strong> data structure that consists of nodes which are linked together in a certain way. Node in a tree has a parent-child relationship (root, leaf)</p>
             </div>
             <div className='keyword'>
                 <h2>Binary tree</h2>
@@ -225,7 +223,6 @@ export function BSTNotes(){
         </div>
     )
 }
-
 export function SearchNotes(){
     return(
         <div className='algorithm_note'>
@@ -241,16 +238,23 @@ export function SearchNotes(){
                 <h3>Binary Search</h3>
                 <p>Only works on sorted array. It works on the same principle of dividing the range in half each time (divide conquer).</p>
                 <h3>Depth-first Search (DFS)</h3>
-                <p>Starts from a given node(usually the root), and traverse as far as you can down. If the node is handled before the branches then it's known pre-order traversal, and if after, then it's known post-order traversal.</p>
+                <p>Starts from a given node(usually the root), and traverse as far as you can go down. When you reach a node that has no children or all nodes of its path have been visited, you start backtracking</p>
+                <p>DFS starts by visiting left branches (if exist) first, then it adds the node to the output array, then visit right branches (if exists). Finally it return the output array in-order LEFT-NODE-RIGHT</p>
+                
                 <h3>Breadth-first Search (BFS)</h3>
                 <p>This works across the rows of a tree. The tree is visited level by level. </p>
                 <p>We need FIFO queue so you can store all the siblings in the queue so you can store all the siblings in the queue and process them in the correct order.</p>
-                <p>When you visit a node, you add it to the queue then remove, and their children are visited. </p>
+                <p> When you visit a node, you add it to the queue. Then you enter the while() loop where there are still items in the queue. <strong>(1)</strong> you dequeue the node and add it to the output array(pre order).<strong>(2)</strong> if the node has left or right children, you add them to the queue(visit). </p>
+                <h3>SEARCH ORDERS</h3>
+                <p>If the node is handled before the branches then it's known pre-order traversal, and if after, then it's known post-order traversal.</p>
+                <p><strong>In-order:</strong> LEFT--NODE--RIGHT</p>
+                <p><strong>Pre-order:</strong> NODE--LEFT--RIGHT</p>
+                <p><strong>Post-order:</strong> LEFT--RIGHT--NODE</p>
+
             </div>
         </div>
     )
 }
-
 export function SortNotes(){
     return(
         <div className='algorithm_note'>
@@ -264,10 +268,12 @@ export function SortNotes(){
                 <h3>Bubble sort</h3>
                 <p>To find out whether adjacent values swapping, we will keep looping through an array until there are no more values that need swapping</p>
                 <h3>Merge sort</h3>
-                <p>Break the array down into continually smaller chunks, then merge them back together in the correct </p>
+                <p>Break the array down into continually smaller chunks, then merge them back together in the correct order.</p>
+                <p>To merge the 2 lists you just keep choosing the lowest value from the left or right that has not been added to the output array. When 1 of the array is empty, you add all of the remaining values from the array to it. </p>
+                <p>Performance: O(nlog(n))</p>
                 <h3>Quick sort</h3>
                 <p>More cache-efficient and can easily be performed in place</p>
-                <p>Divide and conquer approach: first, we partition the array into halves around a pivot value. Then all of the values which are less than the pivot values go to the first half of the array, and all of the values which are greater than the pivot go to the other half of the array.  </p>
+                <p>Divide and conquer approach: first, we partition the array into halves around a pivot value. Then all of the values which are less than the pivot values go to the first half of the array, and all of the values which are greater than the pivot go to the other half of the array. </p>
             </div>
 
         </div>

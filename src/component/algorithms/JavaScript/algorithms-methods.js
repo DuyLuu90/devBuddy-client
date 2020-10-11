@@ -1,3 +1,24 @@
+//SEARCH:
+function binarySearch(array,value,start,end){
+    start= (start===undefined)? 0: start
+    end = (end===undefined)? array.length: end;
+    if (start>end){
+        return -1;
+    }
+    const index= Math.floor((start+end)/2)
+    const item= array[index]
+
+    if (item==value){
+        return index;
+    }
+    else if (item<value){
+        return binarySearch(array,value,index+1,end)
+    }
+    else if (item>value){
+        return binarySearch(array,value,start,index-1)
+    }
+}
+
 //BUBBLE SORT
 function swap(array, i, j) {
     const tmp = array[i];
@@ -86,30 +107,3 @@ function partition(array, start, end) {
     swap(array, end-1, j);
     return j;
 };
-
-//ASSIGNMENT:
-
-//Understanding list of numbers
-    const numbers=[21, 1, 26, 45, 29, 28, 2, 9, 16, 49, 39, 27, 43, 34, 46, 40]
-    //after 3 recursive calls to mergesort
-    mergeSort(numbers)
-    //console.log(mergeSort(numbers))
-    //after 16 recursive calls to mergesort
-    //first 2 list to be merged
-    //which 2 list would be merged on the 7th merge
-
-//Understanding quicksort
-
-//Implement quicksort
-    function qSort(data){
-        
-    }
-//Implement merge sort
-
-//Sorting a linked list using merge sort
-
-//Bucket sort (write an O(n) algorithm to sort an array of integers, where you know in advance what the lowest and highest values are.)
-
-//Sort in place(write an algorithm to shuffle an array into a random order in place)
-
-//Sorting books(Imagine that I gave you 20 books to sort in alphabetical order. Express this as an algorithm and then implement your algorithm)

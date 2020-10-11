@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import {Link, Route, Switch} from 'react-router-dom'
 //import {FontAwesomeIcon}  from '@fortawesome/react-fontawesome'
-import './notes_style.css'
-import {RecursionNotes,ArrayNotes,LinkedListNotes,StackQueueNotes,HashNotes,BSTNotes,SearchNotes,SortNotes, Algorithm} from '../../algorithms/algorithms'
+import './algorithms_style.css'
+import {RecursionNotes,ArrayNotes,LinkedListNotes,StackQueueNotes,HashNotes,BSTNotes,SearchNotes,SortNotes, Algorithm} from './algorithms-content'
 
 export default class AlgorithmNotes extends Component{
    
