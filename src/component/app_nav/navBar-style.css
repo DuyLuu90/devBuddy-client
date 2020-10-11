@@ -14,7 +14,7 @@
     background-color: black ; 
 }
 .main_nav div{
-    width: 75%;
+    width: 100%;
     display: flex;
 }
 .main_nav div a {

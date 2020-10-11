@@ -1,0 +1,10 @@
+#landing h1{
+    color: rgb(172, 150, 24);
+    margin: 15px auto;
+}
+#landing img{
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    margin: 15px auto;
+}

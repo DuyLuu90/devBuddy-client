@@ -7,6 +7,7 @@ import './app-style.css';
 
 //COMPONENTS:
 import NotFoundPage from './component/notfoundpage/notfoundpage';
+import LandingPage from './component/landing/landingpage'
 import NavBar from './component/app_nav/navBar';
 import Footer from './component/app_footer/footer';
 import LoginForm from './component/forms/loginform/loginform'
@@ -61,6 +62,7 @@ export default class App extends Component {
         <main className="App_main">
           {hasError &&<div className='red'>An unknown error has occurred.</div>}
           <Switch>
+            <Route exact path={'/'} component={LandingPage}/>
             <Route path={'/algorithm'} component={AlgorithmNotes}/>
             <Route path={'/register'}component={RegForm}/>
             <Route path={'/login'} component={(props) => 
